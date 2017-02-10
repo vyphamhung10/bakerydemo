@@ -92,7 +92,12 @@ class BlogPage(Page):
     # LocationPage page model
     subpage_types = []
 
-    # api_fields = ['image', 'body']
+    api_fields = [
+        'image',
+        'body',
+        'date_published',
+        'tags'
+        ]
 
 
 class BlogIndexPage(Page):
@@ -133,4 +138,8 @@ class BlogIndexPage(Page):
             self).live().order_by(
             '-first_published_at')
         return context
-    # api_fields = ['introduction']
+
+    api_fields = [
+        'introduction',
+        'posts'
+    ]

@@ -51,6 +51,13 @@ class People(ClusterableModel):
         verbose_name = 'Person'
         verbose_name_plural = 'People'
 
+    api_fields = [
+        'first_name',
+        'last_name',
+        'job_title',
+        'image'
+    ]
+
 
 class AboutLocationRelationship(Orderable, models.Model):
     """
@@ -100,6 +107,13 @@ class AboutPage(Page):
            ),
     ]
 
+    def locations(self):
+        locations = [
+             n.people for n in self.location_about_relationship.all()
+        ]
+
+        return locations
+
     # parent_page_types = [
     #    'home.HomePage'
     # ]
@@ -109,7 +123,26 @@ class AboutPage(Page):
     # LocationPage page model
     subpage_types = []
 
-    # api_fields = ['image', 'body']
+    # For ForeignKeys that we want to access via the API we need to explictly
+    # access a specific field from the related content. I've added unnecessary
+    # verbosity here because we could use the `locations(self)` method above to
+    # give us the objects in a list within the for loop.
+    # This isn't terribly useful since I'm only returning the title but hopefully
+    # enough to be extendable/ understandable
+    def locations_object(obj):
+        locations_set = obj.location_about_relationship.all()
+        locations = [
+            n.locations for n in locations_set
+        ]
+        for location in locations:
+            return location.title
+
+    api_fields = [
+        'title',
+        'image',
+        'body',
+        'locations_object'
+    ]
 
 
 class GalleryPage(Page):
