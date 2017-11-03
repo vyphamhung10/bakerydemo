@@ -2,7 +2,7 @@
 
 PROJECT_NAME=$1
 
-PROJECT_DIR=/vagrant
+: ${PROJECT_DIR:=/vagrant}
 VIRTUALENV_DIR=/home/vagrant/.virtualenvs/$PROJECT_NAME
 
 PYTHON=$VIRTUALENV_DIR/bin/python
@@ -31,6 +31,20 @@ chmod a+x $PROJECT_DIR/manage.py
 cp $PROJECT_DIR/bakerydemo/settings/local.py.example $PROJECT_DIR/bakerydemo/settings/local.py
 # add .env file for django-dotenv environment variable definitions
 echo DJANGO_SETTINGS_MODULE=$PROJECT_NAME.settings.local > $PROJECT_DIR/.env
+
+if [ -n "$USE_POSTGRESQL" ]
+then
+    su - vagrant -c "createdb $PROJECT_NAME"
+    su - vagrant -c "$PIP install \"psycopg2>=2.7,<3\""
+    cat << EOF >> $PROJECT_DIR/bakerydemo/settings/local.py
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': '$PROJECT_NAME',
+    }
+}
+EOF
+fi
 
 # Run syncdb/migrate/load_initial_data/update_index
 su - vagrant -c "$PYTHON $PROJECT_DIR/manage.py migrate --noinput && \
