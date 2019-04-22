@@ -218,39 +218,39 @@ class HomePage(Page):
         verbose_name='Featured section 1'
     )
 
-    featured_section_2_title = models.CharField(
-        null=True,
-        blank=True,
-        max_length=255,
-        help_text='Title to display above the promo copy'
-    )
-    featured_section_2 = models.ForeignKey(
-        'wagtailcore.Page',
-        null=True,
-        blank=True,
-        on_delete=models.SET_NULL,
-        related_name='+',
-        help_text='Second featured section for the homepage. Will display up to '
-        'three child items.',
-        verbose_name='Featured section 2'
-    )
-
-    featured_section_3_title = models.CharField(
-        null=True,
-        blank=True,
-        max_length=255,
-        help_text='Title to display above the promo copy'
-    )
-    featured_section_3 = models.ForeignKey(
-        'wagtailcore.Page',
-        null=True,
-        blank=True,
-        on_delete=models.SET_NULL,
-        related_name='+',
-        help_text='Third featured section for the homepage. Will display up to '
-        'six child items.',
-        verbose_name='Featured section 3'
-    )
+    # featured_section_2_title = models.CharField(
+    #     null=True,
+    #     blank=True,
+    #     max_length=255,
+    #     help_text='Title to display above the promo copy'
+    # )
+    # featured_section_2 = models.ForeignKey(
+    #     'wagtailcore.Page',
+    #     null=True,
+    #     blank=True,
+    #     on_delete=models.SET_NULL,
+    #     related_name='+',
+    #     help_text='Second featured section for the homepage. Will display up to '
+    #     'three child items.',
+    #     verbose_name='Featured section 2'
+    # )
+    #
+    # featured_section_3_title = models.CharField(
+    #     null=True,
+    #     blank=True,
+    #     max_length=255,
+    #     help_text='Title to display above the promo copy'
+    # )
+    # featured_section_3 = models.ForeignKey(
+    #     'wagtailcore.Page',
+    #     null=True,
+    #     blank=True,
+    #     on_delete=models.SET_NULL,
+    #     related_name='+',
+    #     help_text='Third featured section for the homepage. Will display up to '
+    #     'six child items.',
+    #     verbose_name='Featured section 3'
+    # )
 
     content_panels = Page.content_panels + [
         MultiFieldPanel([
@@ -272,14 +272,14 @@ class HomePage(Page):
                 FieldPanel('featured_section_1_title'),
                 PageChooserPanel('featured_section_1'),
                 ]),
-            MultiFieldPanel([
-                FieldPanel('featured_section_2_title'),
-                PageChooserPanel('featured_section_2'),
-                ]),
-            MultiFieldPanel([
-                FieldPanel('featured_section_3_title'),
-                PageChooserPanel('featured_section_3'),
-                ])
+            # MultiFieldPanel([
+            #     FieldPanel('featured_section_2_title'),
+            #     PageChooserPanel('featured_section_2'),
+            #     ]),
+            # MultiFieldPanel([
+            #     FieldPanel('featured_section_3_title'),
+            #     PageChooserPanel('featured_section_3'),
+            #     ])
         ], heading="Featured homepage sections", classname="collapsible")
     ]
 

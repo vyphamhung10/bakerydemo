@@ -43,7 +43,7 @@
   "model": "base.footertext",
   "pk": 1,
   "fields": {
-    "body": "<p>Copyright <b>The Wagtail Bakery</b>, 2017. All rights reserved.<br/><i>\"If you read a lot you're well read / If you eat a lot you're well bread.\"</i></p>"
+    "body": "<p>Copyright <b>QR-Free.com</b>, 2019. All rights reserved.<br/><i>\"If you read a lot you're well read / If you eat a lot you're well bread.\"</i></p>"
   }
 },
 {
@@ -1892,8 +1892,8 @@
     "path": "00010002",
     "depth": 2,
     "numchild": 6,
-    "title": "Welcome to the Wagtail Bakery!",
-    "draft_title": "Welcome to the Wagtail Bakery!",
+    "title": "Welcome to QR-Free.com!",
+    "draft_title": "Welcome to QR-Free.com!",
     "slug": "home",
     "content_type": [
       "base",
