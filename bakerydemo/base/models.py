@@ -103,6 +103,27 @@ class FooterText(models.Model):
         verbose_name_plural = 'Footer Text'
 
 
+@register_snippet
+class FaceBookLink(models.Model):
+    """
+    This provides editable text for the site footer. Again it uses the decorator
+    `register_snippet` to allow it to be accessible via the admin. It is made
+    accessible on the template via a template tag defined in base/templatetags/
+    navigation_tags.py
+    """
+    body = RichTextField()
+
+    panels = [
+        FieldPanel('body'),
+    ]
+
+    def __str__(self):
+        return "https://www.facebook.com/QR-Code-free-387930878717577/"
+
+    class Meta:
+        verbose_name_plural = 'FaceBookLink'
+
+
 class StandardPage(Page):
     """
     A generic content page. On this demo site we use it for an about page but

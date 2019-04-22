@@ -3,7 +3,7 @@ from django import template
 from wagtail.core.models import Page
 
 from bakerydemo.base.models import FooterText
-
+from bakerydemo.base.models import FaceBookLink
 
 register = template.Library()
 # https://docs.djangoproject.com/en/1.9/howto/custom-template-tags/
@@ -99,4 +99,15 @@ def get_footer_text(context):
 
     return {
         'footer_text': footer_text,
+    }
+
+
+@register.inclusion_tag('base/include/footer_text.html', takes_context=True)
+def get_facebook_link(context):
+    facebook_link = ""
+    if FaceBookLink.objects.first() is not None:
+        facebook_link = FaceBookLink.objects.first().body
+
+    return {
+        'facebook_link': facebook_link,
     }
