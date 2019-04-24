@@ -3490,15 +3490,8 @@
     "hero_cta": "Learn more about Wagtail",
     "hero_cta_link": 76,
     "body": "[{\"type\": \"paragraph_block\", \"value\": \"<p><b>Bread</b>\\u00a0is a\\u00a0<a href=\\\"https://en.wikipedia.org/wiki/Staple_food\\\">staple food</a>\\u00a0prepared from a\\u00a0<a href=\\\"https://en.wikipedia.org/wiki/Dough\\\">dough</a>\\u00a0of\\u00a0<a href=\\\"https://en.wikipedia.org/wiki/Flour\\\">flour</a>\\u00a0and\\u00a0<a href=\\\"https://en.wikipedia.org/wiki/Water\\\">water</a>, usually by\\u00a0<a href=\\\"https://en.wikipedia.org/wiki/Baking\\\">baking</a>. Throughout recorded history it has been popular around the world and is one of the oldest artificial foods, having been of importance since the dawn of\\u00a0<a href=\\\"https://en.wikipedia.org/wiki/Agriculture#History\\\">agriculture</a>.</p><p>Proportions of types of flour and other ingredients vary widely, as do modes of preparation. As a result, types, shapes, sizes, and textures of breads differ around the world. Bread may be\\u00a0<a href=\\\"https://en.wikipedia.org/wiki/Leaven\\\">leavened</a>\\u00a0by processes such as reliance on naturally occurring\\u00a0<a href=\\\"https://en.wikipedia.org/wiki/Sourdough\\\">sourdough</a>\\u00a0microbes, chemicals, industrially produced yeast, or high-pressure aeration. Some bread is cooked before it can leaven, including for traditional or religious reasons. Non-cereal ingredients such as fruits, nuts and fats may be included. Commercial bread commonly contains additives to improve flavor, texture, color, shelf life, and ease of manufacturing.</p>\"}]",
-    "promo_image": 37,
-    "promo_title": "Our most excellent bread",
-    "promo_text": "<p>There's a lot that we can say about our bread but frankly we think you need to taste it to believe it. Crafted from lines of Python, Django and the old staples of HTML, CSS and JS we think you'll love what we're baking. With our demonstrations across our fair Island you're never far from a treat. Come visit us whenever you're nearby.</p>",
-    "featured_section_1_title": "Breads",
-    "featured_section_1": 3,
-    "featured_section_2_title": "Locations",
-    "featured_section_2": 63,
-    "featured_section_3_title": "Blog",
-    "featured_section_3": 61
+    "featured_section_1_title": "Blog",
+    "featured_section_1": 61
   }
 },
 {

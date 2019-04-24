@@ -1,34 +1,111 @@
 {% load navigation_tags %}
-
-<div class="header clearfix" role="banner">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <a href="/" class="logo">QRCode-Free.com</a>
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navigation" aria-label="Mobile menu" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-
-                <form action="/search" method="get" class="search" role="search">
-                    <input name="q" type="text" placeholder="Search the site" aria-label="Search the site" autocomplete="off">
-                    <a href="#" class="search-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 451 451"><path d="M447.05 428l-109.6-109.6c29.4-33.8 47.2-77.9 47.2-126.1C384.65 86.2 298.35 0 192.35 0 86.25 0 .05 86.3.05 192.3s86.3 192.3 192.3 192.3c48.2 0 92.3-17.8 126.1-47.2L428.05 447c2.6 2.6 6.1 4 9.5 4s6.9-1.3 9.5-4c5.2-5.2 5.2-13.8 0-19zM26.95 192.3c0-91.2 74.2-165.3 165.3-165.3 91.2 0 165.3 74.2 165.3 165.3s-74.1 165.4-165.3 165.4c-91.1 0-165.3-74.2-165.3-165.4z"></path></svg>
-                    </a>
-                </form>
-
-                {% block main_navigation %}
-                    <nav class="collapse navbar-collapse" id="main-navigation" role="navigation" aria-label="Primary site navigation">
-                        <ul class="nav nav-pills">
+{% load static %}
+{#<div class="header clearfix" role="banner">#}
+{#    <div class="container">#}
+{#        <div class="row">#}
+{#            <div class="col-lg-12">#}
+{#                <a href="/" class="logo">QRCode-Free.com</a>#}
+{#                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navigation" aria-label="Mobile menu" aria-expanded="false">#}
+{#                        <span class="sr-only">Toggle navigation</span>#}
+{#                        <span class="icon-bar"></span>#}
+{#                        <span class="icon-bar"></span>#}
+{#                        <span class="icon-bar"></span>#}
+{#                    </button>#}
+{##}
+{#                <form action="/search" method="get" class="search" role="search">#}
+{#                    <input name="q" type="text" placeholder="Search the site" aria-label="Search the site" autocomplete="off">#}
+{#                    <a href="#" class="search-icon">#}
+{#                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 451 451"><path d="M447.05 428l-109.6-109.6c29.4-33.8 47.2-77.9 47.2-126.1C384.65 86.2 298.35 0 192.35 0 86.25 0 .05 86.3.05 192.3s86.3 192.3 192.3 192.3c48.2 0 92.3-17.8 126.1-47.2L428.05 447c2.6 2.6 6.1 4 9.5 4s6.9-1.3 9.5-4c5.2-5.2 5.2-13.8 0-19zM26.95 192.3c0-91.2 74.2-165.3 165.3-165.3 91.2 0 165.3 74.2 165.3 165.3s-74.1 165.4-165.3 165.4c-91.1 0-165.3-74.2-165.3-165.4z"></path></svg>#}
+{#                    </a>#}
+{#                </form>#}
+{##}
+{#                {% block main_navigation %}#}
+{#                    <nav class="collapse navbar-collapse" id="main-navigation" role="navigation" aria-label="Primary site navigation">#}
+{#                        <ul class="nav nav-pills">#}
                             {# main_menu is defined in base/templatetags/navigation_tags.py #}
-                            {% get_site_root as site_root %}
-                            {% top_menu parent=site_root calling_page=self %}
-                        </ul>
-                    </nav>
-                {% endblock %}
+{#                            {% get_site_root as site_root %}#}
+{#                            {% top_menu parent=site_root calling_page=self %}#}
+{#                        </ul>#}
+{#                    </nav>#}
+{#                {% endblock %}#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
+<header class="header-global">
+    <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom">
+        <div class="container">
+            <a class="navbar-brand mr-lg-5" href="./index.html">
+                <img src="{% static 'assets/img/brand/white.png'%}">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse" id="navbar_global">
+                <div class="navbar-collapse-header">
+                    <div class="row">
+                        <div class="col-6 collapse-brand">
+                            <a href="./index.html">
+                                <img src="{% static 'assets/img/brand/blue.png' %}">
+                            </a>
+                        </div>
+                        <div class="col-6 collapse-close">
+                            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+                                <span></span>
+                                <span></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" href="#" role="button">
+                            <i class="ni ni-ui-04 d-lg-none"></i>
+                            <span class="nav-link-inner--text">Components</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" href="#" role="button">
+                            <i class="ni ni-collection d-lg-none"></i>
+                            <span class="nav-link-inner--text">Examples</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav align-items-lg-center ml-lg-auto">
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-icon" href="https://www.facebook.com/creativetim" target="_blank" data-toggle="tooltip" title="Like us on Facebook">
+                            <i class="fa fa-facebook-square"></i>
+                            <span class="nav-link-inner--text d-lg-none">Facebook</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-icon" href="https://www.instagram.com/creativetimofficial" target="_blank" data-toggle="tooltip" title="Follow us on Instagram">
+                            <i class="fa fa-instagram"></i>
+                            <span class="nav-link-inner--text d-lg-none">Instagram</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-icon" href="https://twitter.com/creativetim" target="_blank" data-toggle="tooltip" title="Follow us on Twitter">
+                            <i class="fa fa-twitter-square"></i>
+                            <span class="nav-link-inner--text d-lg-none">Twitter</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-icon" href="https://github.com/creativetimofficial/argon-design-system" target="_blank" data-toggle="tooltip" title="Star us on Github">
+                            <i class="fa fa-github"></i>
+                            <span class="nav-link-inner--text d-lg-none">Github</span>
+                        </a>
+                    </li>
+                    <li class="nav-item d-none d-lg-block ml-lg-4">
+                        <a href="https://www.creative-tim.com/product/argon-design-system" target="_blank" class="btn btn-neutral btn-icon">
+                <span class="btn-inner--icon">
+                  <i class="fa fa-cloud-download mr-2"></i>
+                </span>
+                            <span class="nav-link-inner--text">Download</span>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
-    </div>
-</div>
+    </nav>
+</header>
