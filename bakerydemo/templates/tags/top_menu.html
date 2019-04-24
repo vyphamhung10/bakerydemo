@@ -2,13 +2,19 @@
 {% get_site_root as site_root %}
 
 {% for menuitem in menuitems %}
-  <li class="presentation {{ menuitem.title|lower|cut:" " }}{% if menuitem.active %} active{% endif %}{% if menuitem.show_dropdown %} has-submenu{% endif %}">
-      {% if menuitem.show_dropdown %}
-          <a href="{% pageurl menuitem %}" class="allow-toggle">{{ menuitem.title }} <span><a class="caret-custom dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a></span></a>
-              {% top_menu_children parent=menuitem %}
-              {# Used to display child menu items #}
-      {% else %}
-          <a href="{% pageurl menuitem %}" role="menuitem">{{ menuitem.title }}</a>
-      {% endif %}
-  </li>
+    <li class="nav-item
+            {{ menuitem.title|lower|cut:" " }}{% if menuitem.active %} active{% endif %}{% if menuitem.show_dropdown %} has-submenu{% endif %}">
+        {% if menuitem.show_dropdown %}
+{#            <a href="{% pageurl menuitem %}" class="allow-toggle">{{ menuitem.title }} <span><a#}
+{#                    class="caret-custom dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"#}
+{#                    aria-expanded="false"></a></span></a>#}
+{#            {% top_menu_children parent=menuitem %}#}
+            {# Used to display child menu items #}
+        {% else %}
+            <a class="nav-link" href="{% pageurl menuitem %}" role="button">
+                <i class="ni ni-collection d-lg-none"></i>
+                <span class="nav-link-inner--text">{{ menuitem.title }}</span>
+            </a>
+        {% endif %}
+    </li>
 {% endfor %}
