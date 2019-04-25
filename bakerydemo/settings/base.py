@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'modelcluster',
     'taggit',
     'wagtailfontawesome',
+    'sass_processor',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -144,7 +145,12 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+# Scss stuff
+SASS_PROCESSOR_INCLUDE_DIRS = [
+    os.path.join(PROJECT_DIR, 'static/assets/scss')
+]
 
+SASS_PRECISION = 8
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
@@ -152,6 +158,7 @@ USE_TZ = True
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'sass_processor.finders.CssFinder'
 ]
 
 STATICFILES_DIRS = [

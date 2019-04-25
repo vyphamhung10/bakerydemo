@@ -16,3 +16,7 @@ django-redis==4.8.0
 django_cache_url==2.0.0
 # For copying initial media to S3 bucket
 awscli==1.16.43
+# Scss
+django-sass-processor==0.7.3
+django-compressor==2.2
+libsass==0.18.0
