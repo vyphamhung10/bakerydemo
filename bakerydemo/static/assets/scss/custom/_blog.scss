@@ -1,0 +1,21 @@
+.rich-text{
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.block-image_block{
+  text-align: center;
+
+  img {
+    max-width: 450px;
+    max-height: 450px;
+    border-radius: $border-radius;
+    @extend .shadow;
+  }
+
+  figcaption{
+    margin-top: 4px;
+    font-style: italic;
+    font-size: 0.9rem;
+  }
+}
