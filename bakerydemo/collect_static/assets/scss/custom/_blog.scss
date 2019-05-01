@@ -4,6 +4,13 @@
     text-justify: inter-word;
   }
 
+  .richtext-image{
+    max-width: 450px;
+    max-height: 450px;
+    border-radius: $border-radius;
+    @extend .shadow;
+  }
+
   .block-image_block{
     text-align: center;
 
