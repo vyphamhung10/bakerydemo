@@ -39,8 +39,10 @@
                 <span class="span-50"></span>
                 <span class="span-100"></span>
             </div>
-            {% block content_hero %}
-            {% endblock content_hero %}
+            {% if with_content_hero == null or with_content_hero == True %}
+                {% block content_hero %}
+                {% endblock content_hero %}
+            {% endif %}
             {% block messages %}
                 {% include "includes/messages.html" %}
             {% endblock messages %}

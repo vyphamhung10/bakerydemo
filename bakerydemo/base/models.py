@@ -1,6 +1,7 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from django.forms import widgets
 
 from modelcluster.fields import ParentalKey
 from modelcluster.models import ClusterableModel
@@ -375,7 +376,7 @@ class FormPage(AbstractEmailForm):
     content_panels = AbstractEmailForm.content_panels + [
         ImageChooserPanel('image'),
         StreamFieldPanel('body'),
-        InlinePanel('form_fields', label="Form fields"),
+        InlinePanel('form_fields', label="Form fields", classname="form-control"),
         FieldPanel('thank_you_text', classname="full"),
         MultiFieldPanel([
             FieldRowPanel([
@@ -385,3 +386,20 @@ class FormPage(AbstractEmailForm):
             FieldPanel('subject'),
         ], "Email"),
     ]
+
+    def get_form(self, *args, **kwargs):
+        form = super().get_form(*args, **kwargs)
+        # form = super(AbstractEmailForm, self).get_form(*args, **kwargs)  # use this syntax for Python 2.x
+        # iterate through the fields in the generated form
+        for name, field in form.fields.items():
+            # here we want to adjust the widgets on each field
+            # if the field is a TextArea - adjust the rows
+            if isinstance(field.widget, widgets.Textarea):
+                field.widget.attrs.update({'rows': '5'})
+            # for all fields, get any existing CSS classes and add 'form-control'
+            # ensure the 'class' attribute is a string of classes with spaces
+            css_classes = field.widget.attrs.get('class', '').split()
+            css_classes.append('form-control')
+            field.widget.attrs.update({'class': ' '.join(css_classes)})
+            field.widget.attrs.update({'placeholder': field.help_text})
+        return form

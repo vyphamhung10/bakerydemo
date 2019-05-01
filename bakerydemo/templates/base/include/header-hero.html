@@ -4,24 +4,46 @@
 <div class="container">
     <div class="row">
         <div class="col-md-10">
-            <h1 class="display-2 text-white">{{ page.title }}</h1>
-            {% if page.subtitle %}
-                <p class="text-white font-italic">{{ page.subtitle }}</p>
-            {% endif %}
-            {% if page.date_published %}
-                <div class="text-muted">
-                    {{ page.date_published }}
-                </div>
-            {% endif %}
-            {% if page.authors %}
-                <div class="row mt-2">
-                    {% for author in page.authors %}
-                        <div class="col-sm-4 d-flex flex-row align-items-center">
-                            {% image author.image fill-50x50-c100 class="rounded-circle img-fluid shadow shadow-lg--hover" style="width: 50px;"%}
-                            <small class="ml-2 text-white font-italic text-muted h6">{{ author.first_name }} {{ author.last_name }}</small>
-                        </div>
-                    {% endfor %}
-                </div>
+            {% if center == null or center == False %}
+                <h1 class="display-2 text-white">{{ page.title }}</h1>
+                {% if page.subtitle %}
+                    <p class="text-white font-italic">{{ page.subtitle }}</p>
+                {% endif %}
+                {% if page.date_published %}
+                    <div class="text-muted">
+                        {{ page.date_published }}
+                    </div>
+                {% endif %}
+                {% if page.authors %}
+                    <div class="row mt-2">
+                        {% for author in page.authors %}
+                            <div class="col-sm-4 d-flex flex-row align-items-center">
+                                {% image author.image fill-50x50-c100 class="rounded-circle img-fluid shadow shadow-lg--hover" style="width: 50px;" %}
+                                <small class="ml-2 text-white font-italic text-muted h6">{{ author.first_name }} {{ author.last_name }}</small>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% else %}
+                <h1 class="display-2 text-white text-center">{{ page.title }}</h1>
+                {% if page.subtitle %}
+                    <p class="text-white font-italic text-center">{{ page.subtitle }}</p>
+                {% endif %}
+                {% if page.date_published %}
+                    <div class="text-muted">
+                        {{ page.date_published }}
+                    </div>
+                {% endif %}
+                {% if page.authors %}
+                    <div class="row mt-2">
+                        {% for author in page.authors %}
+                            <div class="col-sm-4 d-flex flex-row align-items-center">
+                                {% image author.image fill-50x50-c100 class="rounded-circle img-fluid shadow shadow-lg--hover" style="width: 50px;" %}
+                                <small class="ml-2 text-white font-italic text-muted h6">{{ author.first_name }} {{ author.last_name }}</small>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
             {% endif %}
         </div>
     </div>
