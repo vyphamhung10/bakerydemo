@@ -4,19 +4,12 @@
     text-justify: inter-word;
   }
 
-  .richtext-image{
-    max-width: 450px;
-    max-height: 450px;
-    border-radius: $border-radius;
-    @extend .shadow;
-  }
-
   .block-image_block{
     text-align: center;
 
     img {
       max-width: 450px;
-      max-height: 450px;
+      height: 100%;
       border-radius: $border-radius;
       @extend .shadow;
     }
@@ -27,4 +20,11 @@
       font-size: 0.9rem;
     }
   }
+}
+
+.richtext-image{
+  max-width: 450px;
+  height: 100%;
+  border-radius: $border-radius;
+  @extend .shadow;
 }
