@@ -1,0 +1,138 @@
+.publicScss {
+
+  background-color: #FAFAFA;
+
+  .public-content{
+    background-color: white;
+    padding-bottom: 10px;
+
+    box-shadow: 30px 0 30px -30px rgba(0, 0, 0, 0.1), -30px 0 30px -30px rgba(0, 0, 0, 0.1);
+  }
+
+  .public-title{
+    font-size: 50px;
+
+  }
+
+  .public-navbar {
+    background-color: white;
+    height: 60px;
+    border-bottom: 1px solid #e8eaeb;
+    padding: 0 16px;
+
+    .navbar-lang {
+      color: #111111;
+      font-weight: bold;
+    }
+
+    .navbar-btn-light {
+      border: none;
+      color: #47BDFE;
+      background-color: transparent;
+
+      margin-left: 15px;
+      padding: 5px 20px;
+      font-size: 17px;
+
+
+      display: flex;
+      border-radius: 5px;
+      text-decoration: none;
+
+      text-align: center;
+      vertical-align: middle;
+      user-select: none;
+
+      font-family: "Open Sans Semibold", sans-serif;
+    }
+
+    .navbar-btn-light:hover {
+      color: #399ed2;
+    }
+
+    .navbar-btn-dark {
+      background-color: #47BDFE;
+      color: #fff;
+      padding: 5px 22px;
+      font-size: 17px;
+
+      display: flex;
+      border-radius: 5px;
+      text-decoration: none;
+
+
+      text-align: center;
+      vertical-align: middle;
+      user-select: none;
+
+
+      font-family: "Open Sans Semibold", sans-serif;
+    }
+
+    .navbar-btn-dark:hover {
+      color: #fff;
+      background-color: #25acdd;
+    }
+
+    .navbar-divider {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      height: 45px;
+      margin: 0 10px;
+      width: 1px;
+      position: relative;
+    }
+
+    .public-dropdown-login {
+      width: 300px;
+      background-color: #FFFFFF !important;
+      box-shadow: 0 30px 30px rgba(50, 50, 93, 0.1), 0 15px 30px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .bg-secondary {
+      background-color: #FFFFFF !important;
+    }
+
+    .shadow, .card-inputdata-image img {
+      box-shadow: 0 0 0rem 0 rgba(136, 152, 170, 0.15) !important;
+    }
+  }
+
+
+  .public-card {
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, .2);
+    -moz-box-shadow: 0 2px 8px 0 rgba(0, 0, 0, .2);
+    -webkit-box-shadow: 0 2px 8px 0 rgba(0, 0, 0, .2);
+
+    .nav-pills .nav-link, .nav-pills .show > .nav-link {
+      font-weight: 600;
+      border-radius: 5px;
+      font-size: 16px;
+      padding: 8px 14px 8px 14px;
+      color: #bbbdbf;
+
+    }
+
+    .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+      background-color: #f1f1f1 !important;
+      color: #616568;
+
+    }
+
+    .nav-pills .nav-link:hover, .nav-pills .show > .nav-link {
+      color: #616568;
+
+    }
+  }
+}
+
+
+@media (min-width: 576px) {
+  .public-navbar{
+    padding: 0 0;
+  }
+}
