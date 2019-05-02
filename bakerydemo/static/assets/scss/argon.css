@@ -5511,7 +5511,7 @@ button.bg-darker:focus {
 .shadow-sm {
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important; }
 
-.shadow, .profile-page .card-profile .card-profile-image img, .blog-page .block-image_block img, .richtext-image {
+.shadow, .profile-page .card-profile .card-profile-image img, .home-page .block-image_block img, .blog-page .block-image_block img, .richtext-image {
   box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07) !important; }
 
 .shadow-lg {
@@ -10959,17 +10959,17 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   right: 10px;
   left: auto; }
 
-.blog-page .rich-text {
+.home-page .rich-text, .blog-page .rich-text {
   text-align: justify;
   text-justify: inter-word; }
 
-.blog-page .block-image_block {
+.home-page .block-image_block, .blog-page .block-image_block {
   text-align: center; }
-  .blog-page .block-image_block img {
+  .home-page .block-image_block img, .blog-page .block-image_block img {
     max-width: 450px;
     height: 100%;
     border-radius: 0.25rem; }
-  .blog-page .block-image_block figcaption {
+  .home-page .block-image_block figcaption, .blog-page .block-image_block figcaption {
     margin-top: 4px;
     font-style: italic;
     font-size: 0.9rem; }
@@ -11044,7 +11044,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
       box-shadow: 0 30px 30px rgba(50, 50, 93, 0.1), 0 15px 30px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.05); }
     .publicScss .public-navbar .bg-secondary {
       background-color: #FFFFFF !important; }
-    .publicScss .public-navbar .shadow, .publicScss .public-navbar .profile-page .card-profile .card-profile-image img, .profile-page .card-profile .card-profile-image .publicScss .public-navbar img, .publicScss .public-navbar .blog-page .block-image_block img, .blog-page .block-image_block .publicScss .public-navbar img, .publicScss .public-navbar .richtext-image, .publicScss .public-navbar .card-inputdata-image img {
+    .publicScss .public-navbar .shadow, .publicScss .public-navbar .profile-page .card-profile .card-profile-image img, .profile-page .card-profile .card-profile-image .publicScss .public-navbar img, .publicScss .public-navbar .home-page .block-image_block img, .home-page .block-image_block .publicScss .public-navbar img, .publicScss .public-navbar .blog-page .block-image_block img, .blog-page .block-image_block .publicScss .public-navbar img, .publicScss .public-navbar .richtext-image, .publicScss .public-navbar .card-inputdata-image img {
       box-shadow: 0 0 0rem 0 rgba(136, 152, 170, 0.15) !important; }
   .publicScss .public-card {
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
