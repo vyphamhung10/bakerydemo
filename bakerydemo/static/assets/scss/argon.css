@@ -10966,7 +10966,8 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 .home-page .introduction, .blog-page .introduction {
   text-align: justify;
   text-justify: inter-word;
-  font-size: 1.1rem; }
+  font-size: 1.1rem;
+  font-style: italic; }
 
 .home-page h2, .blog-page h2 {
   font-size: 1.5rem !important; }
