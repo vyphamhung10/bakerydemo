@@ -5,12 +5,12 @@
     <div class="row">
         <div class="col-md-10">
             {% if center == null or center == False %}
-                <h1 class="display-2 text-white">{{ page.title }}</h1>
+                <h1 class="display-3 text-white">{{ page.title }}</h1>
                 {% if page.subtitle %}
                     <p class="text-white font-italic">{{ page.subtitle }}</p>
                 {% endif %}
                 {% if page.date_published %}
-                    <div class="text-muted">
+                    <div class="text-white">
                         {{ page.date_published }}
                     </div>
                 {% endif %}
@@ -19,7 +19,7 @@
                         {% for author in page.authors %}
                             <div class="col-sm-4 d-flex flex-row align-items-center">
                                 {% image author.image fill-50x50-c100 class="rounded-circle img-fluid shadow shadow-lg--hover" style="width: 50px;" %}
-                                <small class="ml-2 text-white font-italic text-muted h6">{{ author.first_name }} {{ author.last_name }}</small>
+                                <small class="ml-2 text-white font-italic text-white h6">{{ author.first_name }} {{ author.last_name }}</small>
                             </div>
                         {% endfor %}
                     </div>
