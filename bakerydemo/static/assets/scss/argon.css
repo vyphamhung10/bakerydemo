@@ -10963,6 +10963,9 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   text-align: justify;
   text-justify: inter-word; }
 
+.home-page h2, .blog-page h2 {
+  font-size: 1rem !important; }
+
 .home-page .block-image_block, .blog-page .block-image_block {
   text-align: center; }
   .home-page .block-image_block img, .blog-page .block-image_block img {
