@@ -181,11 +181,15 @@ class HomePage(Page):
         verbose_name='Hero CTA',
         max_length=255,
         help_text='Text to display on Call to Action'
-    )
-    hero_cta_link = models.CharField(
-        verbose_name='Hero CTA Link',
-        max_length=255,
-        help_text='Link to hero CTA'
+        )
+    hero_cta_link = models.ForeignKey(
+        'wagtailcore.Page',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+',
+        verbose_name='Hero CTA link',
+        help_text='Choose a page to link to for the Call to Action'
     )
 
     # Body section of the HomePage
