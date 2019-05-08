@@ -59,6 +59,7 @@ class BaseStreamBlock(StreamBlock):
         icon="fa-paragraph",
         template="blocks/paragraph_block.html"
     )
+
     image_block = ImageBlock()
     block_quote = BlockQuote()
     embed_block = EmbedBlock(
