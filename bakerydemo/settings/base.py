@@ -192,6 +192,5 @@ WAGTAIL_SITE_NAME = "bakerydemo"
 CORS_ORIGIN_ALLOW_ALL = False
 
 CORS_ORIGIN_WHITELIST = (
-    'http//:localhost:3000',
-    'http//:qrcode-free.com'
+    r"^https://\w+\.qrcode-free\.com$",
 )
