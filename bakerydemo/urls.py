@@ -6,6 +6,7 @@ from wagtail.admin import urls as wagtailadmin_urls
 from wagtail.documents import urls as wagtaildocs_urls
 from wagtail.contrib.sitemaps.views import sitemap
 from wagtail.core import urls as wagtail_urls
+from wagtail_feeds.feeds import BasicFeed, BasicJsonFeed, ExtendedFeed, ExtendedJsonFeed
 
 from bakerydemo.search import views as search_views
 from .api import api_router
@@ -15,7 +16,11 @@ urlpatterns = [
 
     url(r'^admin/', include(wagtailadmin_urls)),
     url(r'^documents/', include(wagtaildocs_urls)),
-
+    url(r'^blog/feed/basic$', BasicFeed(), name='basic_feed'),
+    url(r'^blog/feed/extended$', ExtendedFeed(), name='extended_feed'),
+    # JSON feed
+    url(r'^blog/feed/basic.json$', BasicJsonFeed(), name='basic_json_feed'),
+    url(r'^blog/feed/extended.json$', ExtendedJsonFeed(), name='extended_json_feed'),
     url(r'^search/$', search_views.search, name='search'),
 
     url('^sitemap\.xml$', sitemap),

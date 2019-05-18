@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     'bakerydemo.breads',
     'bakerydemo.locations',
     'bakerydemo.search',
-
+    'wagtail.contrib.settings',
     'wagtail.contrib.search_promotions',
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'wagtail.api.v2',
     'wagtail.contrib.modeladmin',
     'wagtail.contrib.routable_page',
+    'wagtail_feeds',
     'wagtail.core',
 
     'rest_framework',

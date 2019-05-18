@@ -1,0 +1,63 @@
+{% extends "base_frame.html" %}
+{% load wagtailimages_tags wagtailcore_tags %}
+{% load static %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-12 feature-2">
+            {% if page.featured_section_1 %}
+                <div class="col-md-12">
+                    <div class="row row-grid">
+                        {#                            {% for childpage in page.featured_section_1.specific.children|slice:"3" %}#}
+                        {#                                <li class="col-sm-4 feature-2-item">#}
+                        {#                                    <a href="{{ childpage.url }}">#}
+                        {#                                        <figure>#}
+                        {#                                            {% image childpage.image fill-430x210-c100 %}#}
+                        {#                                        </figure>#}
+                        {#                                    </a>#}
+                        {#                                    <div class="feature-2-text">#}
+                        {#                                        <h3><a href="{{ childpage.url }}">{{ childpage.title }}</a></h3>#}
+                        {#                                        <p>{{ childpage.introduction|truncatewords:15 }}</p>#}
+                        {#                                    </div>#}
+                        {#                                </li>#}
+                        {#                            {% endfor %}                            #}
+                        {% for childpage in page.featured_section_1.specific.children|slice:"3" %}
+                            <div class="col-md-4">
+                                <div class="card card-lift--hover bg-dark shadow border-0">
+                                    <a href="{{ childpage.url }}">
+                                        <img class="card-img-top" {% image childpage.image fill-430x210-c100 %}/>
+                                    </a>
+                                    <blockquote class="card-blockquote">
+                                        <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"
+                                             viewBox="0 0 583 95" class="svg-bg">
+                                            <polygon points="0,52 583,95 0,95" class="fill-default"/>
+                                            <polygon points="0,42 583,95 683,0 0,95" opacity=".2"
+                                                     class="fill-default"/>
+                                        </svg>
+                                        <h3 class="display-4"><a class="font-weight-bold text-white" href="{{ childpage.url }}">{{ childpage.title }}</a></h3>
+                                        <p class="lead text-italic text-white">{{ childpage.introduction|truncatewords:15 }}</p>
+                                        <a href="{{ childpage.url }}" class="text-success text-underline">Learn more</a>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        {% endfor %}
+                        {#                            <div class="card card-lift--hover shadow border-0">#}
+                        {#                                <div class="card-body py-5">#}
+                        {#                                    <div class="icon icon-shape icon-shape-primary rounded-circle mb-4">#}
+                        {#                                        <i class="ni ni-check-bold"></i>#}
+                        {#                                    </div>#}
+                        {#                                    <h6 class="text-primary text-uppercase">Download Argon</h6>#}
+                        {#                                    <p class="description mt-3">Argon is a great free UI package based on Bootstrap 4 that includes the most important components and features.</p>#}
+                        {#                                    <div>#}
+                        {#                                        <span class="badge badge-pill badge-primary">design</span>#}
+                        {#                                        <span class="badge badge-pill badge-primary">system</span>#}
+                        {#                                        <span class="badge badge-pill badge-primary">creative</span>#}
+                        {#                                    </div>#}
+                        {#                                    <a href="#" class="btn btn-primary mt-4">Learn more</a>#}
+                        {#                                </div>#}
+                        {#                            </div>#}
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock content %}
