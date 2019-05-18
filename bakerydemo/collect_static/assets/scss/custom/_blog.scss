@@ -1,0 +1,46 @@
+.home-page,.blog-page {
+  .rich-text{
+    text-align: justify;
+    text-justify: inter-word;
+  }
+
+  .introduction{
+    text-align: justify;
+    text-justify: inter-word;
+    font-size: 1.1rem;
+    font-style: italic;
+  }
+
+  h2{
+    font-size: 1.5rem !important;
+  }
+
+  h3{
+    font-size: 1.3rem !important;
+  }
+
+  .block-image_block{
+    text-align: center;
+
+    img {
+      max-width: 450px;
+      height: 100%;
+      border-radius: $border-radius;
+      @extend .shadow;
+    }
+
+    figcaption{
+      margin-top: 4px;
+      font-style: italic;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+.richtext-image{
+  max-width: 450px;
+  height: 100%;
+  border-radius: $border-radius;
+  margin-left: 17%;
+  @extend .shadow;
+}
