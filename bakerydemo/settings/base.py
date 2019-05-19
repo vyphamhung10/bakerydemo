@@ -198,3 +198,6 @@ CORS_ORIGIN_WHITELIST = (
 CORS_ORIGIN_REGEX_WHITELIST = [
     r"^https://\w+\.qrcode-free\.com$",
 ]
+
+#XFRAME
+X_FRAME_OPTIONS = 'ALL'
