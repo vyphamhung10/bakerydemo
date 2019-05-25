@@ -23,7 +23,7 @@
                         {% for childpage in page.featured_section_1.specific.children|slice:"3" %}
                             <div class="col-md-4">
                                 <div class="card card-lift--hover shadow border-0" style="background-color: #f7f7f7">
-                                    <img href="{{ childpage.url }}">
+                                    <a target="_blank" rel="noopener noreferrer" href="{{ childpage.url }}">
                                         {% if childpage.image %}
                                             <img class="card-img-top" {% image childpage.image fill-430x210-c100 %}</img>
                                         {%  else %}
