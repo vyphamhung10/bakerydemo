@@ -2,7 +2,7 @@
 {% load wagtailimages_tags wagtailcore_tags %}
 {% load static %}
 {% block content %}
-    <div class="row" style="background-color: #FAFAFA">
+    <div class="row" style="background-color: #FAFAFA; width: 100%; height: 650px; padding-top: 30px">
         <div class="col-md-12 feature-2">
             {% if page.featured_section_1 %}
                 <div class="col-md-12">
@@ -22,19 +22,20 @@
                         {#                            {% endfor %}                            #}
                         {% for childpage in page.featured_section_1.specific.children|slice:"3" %}
                             <div class="col-md-4">
-                                <div class="card card-lift--hover bg-dark shadow border-0">
-                                    <a href="{{ childpage.url }}">
-                                        <img class="card-img-top" {% image childpage.image fill-430x210-c100 %}/>
+                                <div class="card card-lift--hover shadow border-0" style="background-color: #f7f7f7">
+                                    <img href="{{ childpage.url }}">
+                                        {% if childpage.image %}
+                                            <img class="card-img-top" {% image childpage.image fill-430x210-c100 %}</img>
+                                        {%  else %}
+                                            <img src="{% static 'assets/img/theme/img-1-1200x1000.jpg' %}">
+                                        {% endif %}
                                     </a>
                                     <blockquote class="card-blockquote">
                                         <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"
                                              viewBox="0 0 583 95" class="svg-bg">
-                                            <polygon points="0,52 583,95 0,95" class="fill-default"/>
-                                            <polygon points="0,42 583,95 683,0 0,95" opacity=".2"
-                                                     class="fill-default"/>
                                         </svg>
-                                        <h3 class="display-4"><a class="font-weight-bold text-white" href="{{ childpage.url }}">{{ childpage.title }}</a></h3>
-                                        <p class="lead text-italic text-white">{{ childpage.introduction|truncatewords:15 }}</p>
+                                        <h3 class="display-4"><a class="font-weight-bold" href="{{ childpage.url }}">{{ childpage.title }}</a></h3>
+                                        <p class="lead text-italic">{{ childpage.introduction|truncatewords:15 }}</p>
                                         <a href="{{ childpage.url }}" class="text-success text-underline">Learn more</a>
                                     </blockquote>
                                 </div>
