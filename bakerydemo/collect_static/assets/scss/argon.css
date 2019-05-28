@@ -3412,6 +3412,7 @@ input[type="button"].btn-block {
 
 .card-img-top {
   width: 100%;
+  max-height: 250px;
   border-top-left-radius: calc(0.25rem - 0.0625rem);
   border-top-right-radius: calc(0.25rem - 0.0625rem); }
 
@@ -11077,5 +11078,3 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 @media (min-width: 576px) {
   .public-navbar {
     padding: 0 0; } }
-
-/*# sourceMappingURL=argon.css.map */
